@@ -1,0 +1,10 @@
+{
+  "name": "Lionfinity AI",
+  "description": "Assistente de inteligência artificial de alta performance com raciocínio multimodal, modos Rápido, Pensar e Pro.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="light"] {
+  --background: #ffffff;
+  --surface: #f7f7f8;
+  --surface-secondary: #f5f5f5;
+  --card: #ffffff;
+  --input-bg: #f5f5f5;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-title: #000000;
+  --placeholder: #777777;
+  --border: #e5e5e5;
+  --border-subtle: #f0f0f0;
+  --chat-ai-bg: #ffffff;
+  --chat-ai-text: #111111;
+  --chat-user-bg: #f4f4f4;
+  --chat-user-text: #111111;
+  --header-bg: rgba(255, 255, 255, 0.94);
+}
+
+[data-theme="dark"] {
+  --background: #171717;
+  --surface: #111111;
+  --surface-secondary: #212121;
+  --card: #212121;
+  --input-bg: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-title: #ffffff;
+  --placeholder: #a0a0a0;
+  --border: #343434;
+  --border-subtle: #242424;
+  --chat-ai-bg: #171717;
+  --chat-ai-text: #ffffff;
+  --chat-user-bg: #2f2f2f;
+  --chat-user-text: #ffffff;
+  --header-bg: rgba(23, 23, 23, 0.94);
+}
+
+[data-theme="oled"] {
+  --background: #000000;
+  --surface: #0a0a0a;
+  --surface-secondary: #141414;
+  --card: #141414;
+  --input-bg: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #cfcfcf;
+  --text-title: #ffffff;
+  --placeholder: #a0a0a0;
+  --border: #262626;
+  --border-subtle: #191919;
+  --chat-ai-bg: #000000;
+  --chat-ai-text: #ffffff;
+  --chat-user-bg: #222222;
+  --chat-user-text: #ffffff;
+  --header-bg: rgba(0, 0, 0, 0.94);
+}
+
+/* ACCENT COLORS (Psicologia das Cores) */
+/* Verde (#10A37F / hover #0d8f70) - Equilíbrio, confiança, crescimento, ação positiva */
+:root,
+[data-accent="emerald"],
+[data-accent="green"] {
+  --accent: #10a37f;
+  --accent-hover: #0d8f70;
+  --accent-rgb: 16, 163, 127;
+  --accent-light: rgba(16, 163, 127, 0.12);
+  --accent-border: rgba(16, 163, 127, 0.35);
+}
+
+/* Azul (#2563EB / hover #1d4ed8) - Inteligência, confiança, tecnologia, profissionalismo */
+[data-accent="blue"] {
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-rgb: 37, 99, 235;
+  --accent-light: rgba(37, 99, 235, 0.12);
+  --accent-border: rgba(37, 99, 235, 0.35);
+}
+
+/* Roxo (#7C3AED / hover #6d28d9) - Criatividade, inteligência artificial, inovação */
+[data-accent="purple"] {
+  --accent: #7c3aed;
+  --accent-hover: #6d28d9;
+  --accent-rgb: 124, 58, 237;
+  --accent-light: rgba(124, 58, 237, 0.12);
+  --accent-border: rgba(124, 58, 237, 0.35);
+}
+
+/* Laranja (#F97316 / hover #ea580c) - Energia, dinamismo, ação */
+[data-accent="orange"] {
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --accent-rgb: 249, 115, 22;
+  --accent-light: rgba(249, 115, 22, 0.12);
+  --accent-border: rgba(249, 115, 22, 0.35);
+}
+
+/* Vermelho (#EF4444) - Reservado estritamente para erros, excluir e alertas */
+:root {
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --danger-light: rgba(239, 68, 68, 0.12);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+pre, code, kbd {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--placeholder);
+  opacity: 1;
+}
+
+/* Custom subtle scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.25);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.45);
+}
+
+/* Markdown typography styling */
+.prose {
+  color: var(--text-primary);
+}
+
+.prose p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+  color: var(--text-title);
+}
+
+.prose h1 { font-size: 1.5rem; }
+.prose h2 { font-size: 1.25rem; }
+.prose h3 { font-size: 1.125rem; }
+
+.prose ul, .prose ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+  color: var(--text-primary);
+}
+
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+
+.prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  color: var(--text-primary);
+}
+
+.prose strong {
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--accent-hover);
+}
+
